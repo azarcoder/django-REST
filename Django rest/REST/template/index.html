@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1>User List</h1>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td><a href="{% url 'user_update' user.id %}">{{ user.id }}</a></td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
